@@ -76,7 +76,7 @@ circos -conf AT_HeatmapMod.conf
 I prefer the first one so will add other plots to that.
 
 ## Histograms
-Histograms are added to the same `<plots>` block as heatmaps, by adding a second `<plot>` block:
+Histograms are added to the same `<plots>` block as heatmaps, by adding a second `<plot>` block. For this plot, I am plotting gene counts from `GenesPerWindow.txt`. 
 ```
 <plots>
 <plot>
@@ -131,3 +131,65 @@ Again, the width of the plot can be altered by increasing the difference between
 circos -conf GeneCount_Histo2.conf
 ```
 ![Histogram 2 color](./images/Histogram2.png)
+
+## Line graphs
+
+Again, line is a type of plot which can be added to the `<plots>` block as an additional `<plot>`. For this block I am plotting repeat density. I have already split it so lines of alternate scaffolds differ in colors.
+```
+<plot>
+type = line
+file = RepeatDensity1.txt
+r0 = 0.7r
+r1 = 0.8r
+min = 0
+max = 1
+thickness = 5
+color = black
+</plot>
+<plot>
+type = line
+file = RepeatDensity2.txt
+r0 = 0.7r
+r1 = 0.8r
+min = 0
+max = 1
+thickness = 5
+color = grey
+</plot>
+```
+
+```
+circos Linegraph.conf
+```
+
+![Linegraph 1](./images/Linegraph1.png)
+
+For clarity, I like to shade the background of line plots. This can be done by adding a `<backgrounds>` block within the `<plot>` block. It only needs to go in one of the plot blocks, defined on the plane.
+```
+<plot>
+type = line
+file = RepeatDensity2.txt
+r0 = 0.7r
+r1 = 0.8r
+min = 0
+max = 1
+thickness = 5
+color = grey
+<backgrounds>
+<background>
+color = vvlred
+y0 = 0.5
+</background>
+<background>
+color = vlgreen
+y1 = 0.5
+</background>
+</backgrounds>
+</plot>
+</plots>
+...
+
+```
+circos Linegraph2.conf
+```
+![Linegraph 2](./images/Linegraph2.png)
