@@ -42,4 +42,31 @@ Note that there is a new links block which defines the links. I have also modifi
 ```
 circos -conf circos_Black.conf
 ```
-![Black circos of Blac x Psoj](.circos_Black.png)
+![Black circos of Blac x Psoj](./circos_Black.png)
+
+If you want different colours then that is specified per block. Therefore you need to have multiple `<link>` blocks within one `<links>`
+```
+<links>
+<link>
+file = Alignments/BlacLG1xPsoj.txt
+color         = vlgreen
+radius        = 0.95r
+bezier_radius = 0.1r
+thickness     = 1
+</link>
+<link>
+file = Alignments/BlacLG2xPsoj.txt
+color         = red
+radius        = 0.95r
+bezier_radius = 0.1r
+thickness     = 1
+</link>
+...
+...
+...<\links>
+```
+This is available in `circos_BlacColor.conf`
+Plotting this produces a colourful circos plot
+```
+circos -conf circos_BlacColor.conf`
+![plot](./circos_BlacColor.png)
