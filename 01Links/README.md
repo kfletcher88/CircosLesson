@@ -114,6 +114,7 @@ They will then be inherited by each value.
 
 ## Plotting different radius per scaffold.
 It is possible to provide different radius per scaffold. Providing a global radius in `<links>`, but then overwriting in one `<link>` block is possible:
+```
 <links>
 radius        = 0.5r
 bezier_radius = 0.1r
