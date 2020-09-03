@@ -40,7 +40,6 @@ Heatmaps, as well as line graphs and histograms are defined within the `<plots>`
 ```
 <plots>
 <plot>
-#<<include R0R1.conf>>
 color      = spectral-9-div
 type       = heatmap
 file = AT.txt
@@ -81,7 +80,6 @@ Histograms are added to the same `<plots>` block as heatmaps, by adding a second
 ```
 <plots>
 <plot>
-#<<include R0R1.conf>>
 color      = spectral-9-div
 type       = heatmap
 file = AT.txt
@@ -91,7 +89,7 @@ min  = 0.4
 max  = 0.6
 </plot>
 <plot>
-type=histogram
+type=histogram #Note the different plot type
 file = GenesPerWindow.txt
 extend_bin=no
 fill_color = grey
