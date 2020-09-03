@@ -164,7 +164,7 @@ circos Linegraph.conf
 
 ![Linegraph 1](./images/Linegraph1.png)
 
-For clarity, I like to shade the background of line plots. This can be done by adding a `<backgrounds>` block within the `<plot>` block. It only needs to go in one of the plot blocks, defined on the plane.
+For clarity, I like to shade the background of line plots. This can be done by adding a `<backgrounds>` block within the `<plot>` block. It should only go into the first plot, otherwise it will mask earlier layers on the plane.
 ```
 <plot>
 type = line
