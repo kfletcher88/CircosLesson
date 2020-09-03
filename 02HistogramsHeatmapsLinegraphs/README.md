@@ -16,5 +16,7 @@ Note, the first line isn't required. It is ignored as it beings with a `#`.
 
 ## Karyotype.
 The Karyotype is the same as previous, but as we are using a different, more fragmented assembly, I wanted to reintroduce it. This time, the colors in the final column alternate:
-```circos -conf Karyotype1.conf```
-![Backbone Karyotype](./images/Karyotype1.png)
+```
+circos -conf Karyotype1.conf
+```
+![Backbone Karyotype](./images/Karyotpe1.png)
