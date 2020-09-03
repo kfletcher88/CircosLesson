@@ -33,3 +33,27 @@ circos -conf Karyotype2.conf
 ```
 
 ![Karyotype with break](./images/Karyotype2.png)
+
+## Heatmaps.
+For this example we will plot an AT content heatmap. The frequency of AT bases is defined in the 4th column of `AT.txt`.\
+Heatmaps, as well as line graphs and histograms are defined within the `<plots>` block:
+```
+<plots>
+<plot>
+#<<include R0R1.conf>>
+color      = spectral-9-div
+type       = heatmap
+file = AT.txt
+r0   = 0.955r  #Defines radial position of minimum
+r1   = 0.995r  #Defines radial position of maximum
+min  = 0.4     #Defines minimal y value to plot
+max  = 0.6     #Defined maximal y value to plot
+</plot>
+</plots>
+```
+
+```
+circos -conf AT_Heatmap.conf
+```
+
+![AT content heatmap](./images/Heatmap.png)
