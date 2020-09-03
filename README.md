@@ -1,4 +1,4 @@
-# CircosLesson
+# An introduction to using Circos.
 
 ## Installation
 
