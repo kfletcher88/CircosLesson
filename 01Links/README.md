@@ -68,5 +68,6 @@ thickness     = 1
 This is available in `circos_BlacColor.conf`
 Plotting this produces a colourful circos plot
 ```
-circos -conf circos_BlacColor.conf`
+circos -conf circos_BlacColor.conf
+```
 ![plot](./circos_BlacColor.png)
