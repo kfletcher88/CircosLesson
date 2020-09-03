@@ -193,3 +193,6 @@ y1 = 0.5
 circos Linegraph2.conf
 ```
 ![Linegraph 2](./images/Linegraph2.png)
+
+Circos has a lot more functionality than what is described here, but I think this is a good start. Good luck plotting!
+
