@@ -44,3 +44,18 @@ Running circos with this configuration file will produce the following plot
 circos -conf circos_1Karyotype.conf
 ```
 ![Bremia lactucae karyotype](./circos_1Karyotype.png)
+
+Multiple karyotype files can be specified by listing them on the same line. See `circos_2Karyotype.conf` for an example:
+```
+$ diff circos_1Karyotype.conf circos_2Karyotype.conf
+1c1
+< karyotype = BlacKaryotype.txt
+---
+> karyotype = BlacKaryotype.txt,PsojKaryotype.txt
+```
+Now using this file for plotting will produce the following image.
+```
+circos -conf circos_2Karyotype.conf
+```
+![Bremia lactucae and P.sojae karyotypes](./circos_2Karyotype.png)
+Note if you did not rename the results of the first run, then the second run will overwrite these.
