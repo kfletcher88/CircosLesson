@@ -20,3 +20,16 @@ The Karyotype is the same as previous, but as we are using a different, more fra
 circos -conf Karyotype1.conf
 ```
 ![Backbone Karyotype](./images/Karyotpe1.png)
+You will note that we have removed the labels, to prevent overplotting. Yu can compare `Karyotype1.conf` with previous configurations files to see how.
+While this plot is adequatem it might be useful to have a break in the circle. This would allow space to add labels. This can be done by adding a `<pairwise>` block:
+```
+<pairwise Pdest_CA_v0.1-1 Pdest_CA_v0.1-823>
+spacing=20u
+</pairwise>
+```
+
+```
+circos -conf Karyotype2.conf
+```
+
+![Karyotype with break](./images/Karyotype2.png)
