@@ -57,3 +57,23 @@ circos -conf AT_Heatmap.conf
 ```
 
 ![AT content heatmap](./images/Heatmap.png)
+
+The position and thickness of the heatmap can be changed by modifying r0 and r1"
+```
+$ diff AT_Heatmap.conf AT_HeatmapMod.conf
+47,48c47,48
+< r0   = 0.955r
+< r1   = 0.995r
+---
+> r0   = 0.5r
+> r1   = 0.75r
+```
+
+```
+circos -conf AT_HeatmapMod.conf
+```
+
+![AT content heatmap modified](./images/HeatmapMod.png)
+I prefer the first one so will add other plots to that.
+
+
