@@ -1,4 +1,4 @@
-Plotting links.
+## Plotting links.
 Links and any other type of feature can be added to circos plots by modifying the circos conf.
 I have already generated a file specifying links `BlacXPsoj.Ribbons.txt`.
 ```
@@ -42,7 +42,21 @@ Note that there is a new links block which defines the links. I have also modifi
 ```
 circos -conf circos_Black.conf
 ```
-![Black circos of Blac x Psoj](./circos_Black.png)
+![Black circos of Blac x Psoj](./images/circos_Black.png)
+
+## Testing different radius
+
+By changing the radius value, you can change the size of the links plotted. This might be useful if you want to include other information.
+```
+$ diff circos_Black.conf circos_Black_smallRadius.conf
+40c40
+< radius        = 0.95r
+---
+> radius        = 0.5r
+```
+![Different Radius](./images/circos_SmallRadius.png)
+
+## Different colors
 
 If you want different colours then that is specified per block. Therefore you need to have multiple `<link>` blocks within one `<links>`
 ```
@@ -70,4 +84,4 @@ Plotting this produces a colourful circos plot
 ```
 circos -conf circos_BlacColor.conf
 ```
-![plot](./circos_BlacColor.png)
+![plot](./images/circos_BlacColor.png)
