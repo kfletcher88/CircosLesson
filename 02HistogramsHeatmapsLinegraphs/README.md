@@ -76,4 +76,60 @@ circos -conf AT_HeatmapMod.conf
 ![AT content heatmap modified](./images/HeatmapMod.png)
 I prefer the first one so will add other plots to that.
 
-
+## Histograms
+Histograms are added to the same `<plots>` block as heatmaps, by adding a second `<plot>` block:
+```
+<plots>
+<plot>
+#<<include R0R1.conf>>
+color      = spectral-9-div
+type       = heatmap
+file = AT.txt
+r0   = 0.955r
+r1   = 0.995r
+min  = 0.4
+max  = 0.6
+</plot>
+<plot>
+type=histogram
+file = GenesPerWindow.txt
+extend_bin=no
+fill_color = grey
+min = 0
+max = 17
+r0 = 0.85r
+r1 = 0.95r
+</plot>
+</plots>
+```
+Plotting this:
+```
+circos -conf GeneCount_Histo.conf
+```
+![Histogram 1 color](./images/Histogram1.png)
+However, I think there is value to being able to tell scaffolds from one another, possibly by plotting them in alternate colors. I do this by splitting my input file into two parts, plotting them on the same plane (defined by r0 and r1):
+```$ diff GeneCount_Histo.conf GeneCount_Histo2.conf
+54c54
+< file = GenesPerWindow.txt
+---
+> file = GenesPerWindow1.txt
+56c56,66
+< fill_color = grey
+---
+> fill_color = dred
+> min = 0
+> max = 17
+> r0 = 0.85r
+> r1 = 0.95r
+> </plot>
+> <plot>
+> type=histogram
+> file = GenesPerWindow2.txt
+> extend_bin=no
+> fill_color = dblue
+```
+Again, the width of the plot can be altered by increasing the difference between r0 and r1. 
+```
+circos -conf GeneCount_Histo2.conf
+```
+![Histogram 2 color](./images/Histogram2.png)
