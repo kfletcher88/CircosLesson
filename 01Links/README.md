@@ -55,7 +55,7 @@ $ diff circos_Black.conf circos_Black_smallRadius.conf
 > radius        = 0.5r
 ```
 
-\
+
 ```
 circos -conf circos_Black_smallRadius.conf
 ```
@@ -133,7 +133,7 @@ thickness     = 1
 ...<\links>
 ```
 
-\
+
 ```
 circos -conf circos_DifferentRadius.conf
 ```
