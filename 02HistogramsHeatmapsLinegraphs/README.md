@@ -187,7 +187,7 @@ y1 = 0.5
 </backgrounds>
 </plot>
 </plots>
-...
+```
 
 ```
 circos Linegraph2.conf
