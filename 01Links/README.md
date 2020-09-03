@@ -44,7 +44,7 @@ circos -conf circos_Black.conf
 ```
 ![Black circos of Blac x Psoj](./images/circos_Black.png)
 
-## Testing different radius
+## Different radius
 
 By changing the radius value, you can change the size of the links plotted. This might be useful if you want to include other information.
 ```
@@ -54,6 +54,12 @@ $ diff circos_Black.conf circos_Black_smallRadius.conf
 ---
 > radius        = 0.5r
 ```
+
+\
+```
+circos -conf circos_Black_smallRadius.conf
+```
+
 ![Different Radius](./images/circos_SmallRadius.png)
 
 ## Different colors
@@ -85,3 +91,51 @@ Plotting this produces a colourful circos plot
 circos -conf circos_BlacColor.conf
 ```
 ![plot](./images/circos_BlacColor.png)
+In the above, each `<link>` block contains a radius and bezier_radius value that is the same. These could instead be provided in the `<links>` block:
+```
+<links>
+radius        = 0.95r
+bezier_radius = 0.1r
+<link>
+file = Alignments/BlacLG1xPsoj.txt
+color         = vlgreen
+thickness     = 1
+</link>
+<link>
+file = Alignments/BlacLG2xPsoj.txt
+color         = red
+thickness     = 1
+</link>
+...
+...
+...<\links>
+```
+They will then be inherited by each value.
+
+## Plotting different radius per scaffold.
+It is possible to provide different radius per scaffold. Providing a global radius in `<links>`, but then overwriting in one `<link>` block is possible:
+<links>
+radius        = 0.5r
+bezier_radius = 0.1r
+<link>
+file = Alignments/BlacLG1xPsoj.txt
+color         = vlgreen
+thickness     = 1
+radius        = 0.95
+</link>
+<link>
+file = Alignments/BlacLG2xPsoj.txt
+color         = red
+thickness     = 1
+</link>
+...
+...
+...<\links>
+```
+
+\
+```
+circos -conf circos_DifferentRadius.conf
+```
+
+![BlaxxPsoj, highlight LG1](./images/DifferentRadius.png)
